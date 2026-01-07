@@ -1,0 +1,41 @@
+                                                                                                                                                        PROGRAM 1 EMPLOYEE  DATABASE
+1.CREATE A TABLE FOR EMPLOYEE DETAILS: 
+
+create table employee(empno number primary key,empname varchar2(20),designation varchar2(30),gender 
+varchar2(6),age number,dojdate,salary number);
+
+2. DESCRIBE A TABLE: 
+desc employee; 
+
+3.INSERT A VALUES FOR A EMPLOYEE TABLE: 
+
+SQL> insert into employee values(&empno,'&empname','&designation','&gender',&age,'&doj',&salary);
+
+4.SELECT ALL THE ROWS FROM THE EMPLOYEE TABLE: 
+SQL>select * from employee;
+
+5.COMPARISON: 
+(i) SQL> select * from employee where salary>30000; 
+(ii) SQL> select * from employee where age between 25 and 30; 
+(iii) SQL> select * from employee where empname like '%a'; 
+(iv) SQL> select * from employee where salary in(35000,30000,28000);
+(v) SQL>select * from employee where empno=103;
+
+5.LOGICAL: 
+(i) SQL>  select * from employee where salary<50000 and salary>30000;
+(ii) SQL> select * from employee where designation='manager' or designation='admin'; 
+(iii) SQL> select * from employee where not salary<30000;
+
+6.SORTING: 
+(i)  SQL> select * from employee order by empno;
+(ii)  SQL> select * from employee order by empno desc;
+
+7.SET OPERATION: 
+(i) SQL> select * from employee where salary>30000 union select * from employee where age between 25 
+and 30;
+(ii) SQL> select * from employee where salary>30000 union all select * from employee where age between 
+25 and 30; 
+(iii) SQL> select * from employee where salary>30000 intersect  select * from employee where age between 
+25 and 30;
+(iv) SQL> select * from employee where salary>30000 minus select * from employee where age between 25 
+and 30;
