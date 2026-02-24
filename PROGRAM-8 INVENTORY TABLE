@@ -1,0 +1,53 @@
+1.CREATE A TABLE AS INVENTORY:  
+SQL> create table inventory(prono number primary key,  
+2  pronamevarchar(20),  
+3  rate number);  
+
+2.INSERT VALUES INTO INVENTORY TABLE:  
+SQL> insert into inventory values(&prono,'&proname',&rate);
+
+3.SELECT ALL THE ROWS IN INVENTORY TABLE:  
+SQL> select * from inventory; 
+
+4.UPDATE THE COLUMN AS RATE:  
+SQL>   begin 
+   update inventory set rate=rate+(rate*20/100);  
+  commit;  
+end; 
+/
+
+5. SELECT ALL THE ROWS IN INVENTORY TABLE:  
+SQL> select * from inventory;  
+
+6.ADDING ANEW COLUMN AS NO_OF_ITEMS IN INVENTORY TABLE:  
+SQL> alter table inventory add no_of_items number; 
+
+7.DESCRIBEA INVENTORY TABLE:  
+SQL>desc inventory; 
+
+8.UPDATE AN EXISTING COLUMNS IN INVENTORY TABLE:  
+SQL> update inventory set no_of_items=case prono 
+  when 1001 then 10  
+  when 1002 then 8  
+  when 1003 then 6  
+  when 1004 then 4  
+ end; 
+
+9. SELECT ALL THE ROWS IN INVENTORY TABLE:  
+SQL> select * from inventory;  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
