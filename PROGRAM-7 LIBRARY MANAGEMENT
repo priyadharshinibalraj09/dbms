@@ -1,0 +1,23 @@
+SQL> create table library_master(accno number primary key,title varchar2(25),author varchar2(25), 
+rate number);
+
+SQL> create table library_transaction(userid number,accno number references library_master(accno), 
+date_of_issue date, date_of_return date); 
+
+3.INSERT VALUES INTO LIBRARY_MASTER TABLE:
+SQL> insert into library_master values(&accno,'&title','&author',&rate);
+
+4.SELECT ALL ROWS FROM LIBRARY_MASTER: 
+SQL> select * from library_master; 
+
+5. INSERT VALUES INTO LIBRARY_TRANSACTION TABLE: 
+SQL> insert into library_transaction values(&userid,&accno,'&date_of_issue','&date_of_return'); 
+
+6. SELECT ALL ROWS FROM LIBRARY_TRANSACTION: 
+SQL> select * from library_transaction; 
+
+7. FORMATING THE LIBRARY MANAGEMENT SYSTEM
+SQL> set linesize 75 
+SQL>Ttitle center “LIBRARY MANAGEMENT' skip 1- 
+>center ****************** 
+
