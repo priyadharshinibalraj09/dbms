@@ -1,0 +1,61 @@
+a) Display the Number of rows in a table 
+        SQL> SELECT COUNT(*) FROM EMP; 
+
+b) Write a query to find the minimum,maximum,average & total salary?
+        SQL> SELECT MIN(SAL),MAX(SAL),AVG(SAL),SUM(SAL) FROM EMP;
+
+c) Display the maximum salary being paid to CLERK
+        SQL> SELECT MAX(SAL) FROM EMP WHERE JOB='CLERK';
+
+d) Display the total salary drawn by analyst working in deptno 20
+        SQL> SELECT SUM(SAL) FROM EMP WHERE DEPTNO=20 AND JOB='ANALYST';
+
+e) Display Department numbers and total number of employees working in each Department?
+        SQL> SELECT DEPTNO,COUNT(*) FROM EMP  
+  2  GROUP BY DEPTNO;
+
+f) Display the various jobs and total number of employees working in each job group? 
+        SQL> SELECT JOB,COUNT(*) FROM EMP  
+     GROUP BY JOB;
+
+ 
+g) Display each job along with min of salary being paid in each job group? 
+         SQL> SELECT JOB,MIN(SAL), FROM EMP  
+       GROUP BY JOB; 
+
+h) Display the minimum,maximum,sum and the average salary for each job type.
+          SQL> SELECT JOB,MIN(SAL),MAX(SAL),AVG(SAL),SUM(SAL) FROM EMP 
+   GROUP BY JOB; 
+
+g)  Display the deptno,job and number of employees working in each deptno & in each job?
+          SQL> SELECT DEPTNO,JOB,COUNT(*) FROM EMP  
+  2  GROUP BY DEPTNO,JOB; 
+
+ 
+i) Display the deptno,job and number of employees  working  each job in deptno 20 ? 
+           SQL> SELECT DEPTNO,JOB,COUNT(*) FROM EMP  
+  2  WHERE DEPTNO=20  
+  3  GROUP BY DEPTNO,JOB;
+
+j) Display the deptno,job and number of employees  working  each job in deptno 20 & restrict the 
+count more than 1 ? 
+            SQL> SELECT DEPTNO,JOB,COUNT(*) FROM EMP  
+      WHERE DEPTNO=20  
+      GROUP BY DEPTNO,JOB 
+      HAVING COUNT(*)>1 
+     ORDER BY JOB;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
